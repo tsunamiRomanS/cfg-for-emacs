@@ -9,16 +9,26 @@
 (set-face-attribute 'default nil :height 120)
 
 
-
 (use-package company
   :ensure t
   :init
   (add-hook 'after-init-hook 'global-company-mode))
 
+
+
 (use-package elpy
   :ensure t
   :init
   (elpy-enable))
+
+
+             
+(use-package conda
+  :ensure t
+  :init
+  (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
+  (setq conda-env-home-directory (expand-file-name "~/miniconda3")))
+
 
 ;; Enable vertico
 (use-package vertico
